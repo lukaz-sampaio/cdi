@@ -1,4 +1,4 @@
-package com.cdi.produto;
+package com.cdi.produto.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

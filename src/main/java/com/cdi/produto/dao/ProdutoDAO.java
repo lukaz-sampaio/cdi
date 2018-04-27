@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cdi.produto.repositorio;
+package com.cdi.produto.dao;
 
 import java.util.List;
 
 import com.cdi.produto.model.Produto;
-
-
-
 
 /**
  * @author daniel
@@ -33,6 +30,6 @@ public interface ProdutoDAO {
     void save(Produto produto);
     void update(Produto produto);
     void delete(Produto produto);
-    Produto getById(long id);
+    Produto getById(int id);
     List<Produto> list();
 }

@@ -1,5 +1,7 @@
 package com.cdi.produto.model;
 
+import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,19 +13,21 @@ import javax.persistence.Table;
  * @author lucas
  */
 @Entity
-@Table(name = "product")
-public class Produto {
+@Table(name = "produto")
+public class Produto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name = "id")
+    private int id;
+    @Column(name = "descricao")
     private String name;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

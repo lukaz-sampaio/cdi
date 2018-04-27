@@ -20,23 +20,34 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.cdi.produto.model.Produto;
-import com.cdi.produto.repositorio.ProdutoDAO;
-
+import com.cdi.produto.dao.ProdutoDAO;
 
 /**
  * @author daniel github:Daniel-Dos daniel.dias.analistati@gmail.com
- *         twitter:@danieldiasjava
+ * twitter:@danieldiasjava
  */
 public class ProdutoServico {
 
-	@Inject
-	private ProdutoDAO produtoDAO;
+    @Inject
+    private ProdutoDAO produtoDAO;
 
-	public void inserirProduto(Produto produto) {
-		produtoDAO.save(produto);
-	}
+    public void salvarProduto(Produto p) {
+        if(p.getId() > 0){
+            produtoDAO.update(p);
+        } else {
+            produtoDAO.save(p);
+        }
+    }
 
-	public List<Produto> listarProdutos() {
-		return produtoDAO.list();
-	}
+    public List<Produto> listarProdutos() {
+        return produtoDAO.list();
+    }
+
+    public Produto getProduto(int id) {
+        return produtoDAO.getById(id);
+    }
+
+    public void deletarProdutos(Produto p) {
+        produtoDAO.delete(p);
+    }
 }

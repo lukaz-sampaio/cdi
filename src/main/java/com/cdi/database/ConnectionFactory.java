@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cdi.produto.repositorio;
+package com.cdi.database;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
@@ -27,20 +27,19 @@ import javax.persistence.Persistence;
  * @author lucas
  */
 @ApplicationScoped
-public class ProdutoFactory {
+public class ConnectionFactory {
 
-	private ProdutoFactory() {
-	}
+    private ConnectionFactory() {}
 
-	@Produces
-	public EntityManager createEntityManager() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("cdi");
-		return emf.createEntityManager();
-	}
+    @Produces
+    public EntityManager createEntityManager() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("cdi");
+        return emf.createEntityManager();
+    }
 
-	public void closeEntityManager(@Disposes EntityManager em) {
-		if (em.isOpen()) {
-			em.close();
-		}
-	}
+    public void closeEntityManager(@Disposes EntityManager em) {
+        if (em.isOpen()) {
+            em.close();
+        }
+    }
 }

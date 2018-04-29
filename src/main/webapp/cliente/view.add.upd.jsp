@@ -1,9 +1,10 @@
-<%-- 
+<%--
     Document   : view.add.upd
     Created on : 16/04/2018, 10:07:03
     Author     : lucas
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,13 +14,13 @@
     </head>
     <body>
         <h1>Clientes!</h1> <hr>
-        
+
         <ul>
             <li>
                 <a href="#aba-telefone">Telefone</a>
             </li>
         </ul>
-        
+
         <form method="post">
             <input type="hidden" value="${obj.id}" name="id">
             <label>Nome</label>
@@ -33,9 +34,11 @@
             <label>Email</label>
             <input value="${obj.email}" name="email"><br>
             <label>Nascimento</label>
-            <input value="${obj.nascimento}" name="data_nascimento"><br>
-<%--            <label>Telefone</label>
-            <input value="${obj.telefone}" name="id_telefone"><br>--%>
+            <input name="data_nascimento"
+                   value="<fmt:formatDate pattern="dd/MM/yyyy"
+                                   value="${obj.nascimento}"/>"><br>
+            <%--            <label>Telefone</label>
+                        <input value="${obj.telefone}" name="id_telefone"><br>--%>
             <label>Observa&ccedil;&atilde;o</label>
             <input value="${obj.observacao}" name="observacao">
             <br><br>

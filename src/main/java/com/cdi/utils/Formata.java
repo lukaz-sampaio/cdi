@@ -2,7 +2,6 @@ package com.cdi.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;
@@ -65,11 +64,11 @@ public class Formata {
         }
     }
 
-    public static Date parseDate(String date, String pattern) {
+    public static java.util.Date parseDate(String date, String pattern) {
         try {
             if (StringUtils.isNotBlank(date)) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
-                Date d = dateFormat.parse(date);
+                java.util.Date d = dateFormat.parse(date);
                 return d;
             }
         } catch (ParseException e) {

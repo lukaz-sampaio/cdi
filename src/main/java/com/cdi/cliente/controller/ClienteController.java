@@ -43,11 +43,6 @@ public class ClienteController extends HttpServlet {
 
     private void index(HttpServletRequest request, HttpServletResponse response) {
         List<Cliente> list = service.list();
-        for(Cliente c : list){
-            System.out.println("id: " + c.getId());
-            System.out.println("nome: " + c.getRazaoSocial());
-            System.out.println("fantasia: " + c.getNomeFantasia());
-        }
         request.setAttribute("list", list);
         ServletUtil.render("/cliente/view.index.jsp", request, response);
     }
@@ -93,7 +88,6 @@ public class ClienteController extends HttpServlet {
         c.setId(Formata.parseInt(request.getParameter("id")));
         c.setRazaoSocial(StringUtils.trimToEmpty(request.getParameter("nome")));
         c.setNomeFantasia(StringUtils.trimToEmpty(request.getParameter("nome_fantasia")));
-
         c.setCpfCnpj(Formata.parseLong(request.getParameter("cpf_cnpj")));
         c.setEmail(StringUtils.trimToEmpty(request.getParameter("email")));
         c.setRg(Formata.parseLong(request.getParameter("rg_ie")));

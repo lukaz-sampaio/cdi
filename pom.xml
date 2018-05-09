@@ -15,6 +15,7 @@
     </properties>
 
     <dependencies>
+        <!-- Java Dependencies -->
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet-core</artifactId>
@@ -25,7 +26,8 @@
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
         </dependency>
-        
+
+        <!-- Data Dependencies -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -36,7 +38,20 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1212</version>
         </dependency>
-        
+
+        <!-- Web Dependencies -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
+        <!-- Helpers Dependencies -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -47,7 +62,6 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
